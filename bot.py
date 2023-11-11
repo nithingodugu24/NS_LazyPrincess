@@ -18,7 +18,7 @@ class Bot(Client):
 
     def __init__(self):
         super().__init__(
-            session_name="test",
+            name="test",  # Change session_name to name
             api_id=API_ID,
             api_hash=API_HASH, 
             bot_token=BOT_TOKEN,
@@ -26,6 +26,7 @@ class Bot(Client):
             plugins={"root": "plugins"},
             sleep_threshold=5,
         )
+
 
     async def start(self):
         b_users, b_chats = await db.get_banned()
